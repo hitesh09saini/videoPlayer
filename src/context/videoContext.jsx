@@ -7,15 +7,19 @@ const ContextProvider = ({ children }) => {
   const [videos, setVideos] = useState([]);
 
   const fetch = async () => {
-    const res = await axios.get(`${url}/videos`);
-    setVideos(res.data.result);
+    try {
+      const res = await axios.get(`${url}/videos`);
+      setVideos(res.data.result);
+    } catch (error) {
+      console.log(error);
+    }
   }
   useEffect(() => {
     fetch();
   }, [])
 
   return (
-    <Context.Provider value={{ videos, setVideos,fetch }}>
+    <Context.Provider value={{ videos, setVideos, fetch }}>
       {children}
     </Context.Provider>
   );

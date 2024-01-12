@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext} from 'react';
 import { useState } from 'react';
 import url from '../url.js'
 import axios from 'axios'
@@ -34,7 +34,7 @@ const AddVideo = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
-      await fetch();
+      fetch();
       console.log(res);
       setVideoFile(null);
       setVideoName('');

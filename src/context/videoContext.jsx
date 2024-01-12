@@ -15,7 +15,7 @@ const ContextProvider = ({ children }) => {
   }, [])
 
   return (
-    <Context.Provider value={{ videos, setVideos }}>
+    <Context.Provider value={{ videos, setVideos,fetch }}>
       {children}
     </Context.Provider>
   );

@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useState } from 'react';
 import url from '../url.js'
 import axios from 'axios'
+import Context from '../context/videoContextApi.js'
 
 const AddVideo = () => {
+  const {fetch} = useContext(Context)
   const [video, setVideoFile] = useState(null);
   const [videoName, setVideoName] = useState('');
 
@@ -32,6 +34,7 @@ const AddVideo = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
+      await fetch();
       console.log(res);
       setVideoFile(null);
       setVideoName('');
@@ -41,11 +44,6 @@ const AddVideo = () => {
     }
   };
 
-
-
- useEffect(()=>{
-  fetch()
- })
 
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto select-none mt-8 p-6 bg-white rounded-lg shadow-md">

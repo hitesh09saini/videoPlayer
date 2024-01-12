@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const Layout = () => {
     const { videos, setVideos } = useContext(Context)
-
     return (
         <div>
             <h1 className='p-2 border border-2 text-2xl text-center'>

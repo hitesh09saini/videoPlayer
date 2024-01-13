@@ -1,16 +1,16 @@
 {
     "rewrites": [
         {
-            "source": "/",
-            "destination": "/src/components/Layout.jsx"
+            "source": "/(.*)",
+            "destination": "/"
         },
         {
             "source": "/AddVideo",
-            "destination": "/src/components/AddVideo.jsx"
+            "destination": "./src/components/AddVideo.jsx"
         },
         {
             "source": "/seevideos/:id/:subtitle_id",
-            "destination": "/src/components/SeeVideo.jsx"
+            "destination": "./src/components/SeeVideo.jsx"
         }
     ]
 }

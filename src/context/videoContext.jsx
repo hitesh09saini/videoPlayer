@@ -8,6 +8,7 @@ const ContextProvider = ({ children }) => {
 
   const fetch = async () => {
     try {
+      console.log(url);
       const res = await axios.get(`${url}/videos`);
       setVideos(res.data.result);
     } catch (error) {

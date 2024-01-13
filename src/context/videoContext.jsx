@@ -5,11 +5,10 @@ import url from '../url.js'
 
 const ContextProvider = ({ children }) => {
   const [videos, setVideos] = useState([]);
-
+  
   const fetch = async () => {
     try {
-      console.log(url);
-      const res = await axios.get(`${url}/videos`);
+      const res = await axios.get(`${url}/videos`,{ withCredentials: true });
       setVideos(res.data.result);
     } catch (error) {
       console.log(error);

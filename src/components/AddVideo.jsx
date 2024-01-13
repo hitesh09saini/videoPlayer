@@ -50,7 +50,7 @@ const AddVideo = () => {
 
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto select-none mt-8 p-6 bg-white rounded-lg shadow-md">
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto select-none mt-8 p-6 bg-white rounded-lg shadow-md relative">
       {
         loading && (<Loading />)
       }

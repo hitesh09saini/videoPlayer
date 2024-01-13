@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import Video from './Video.jsx'
 import Context from '../context/videoContextApi.js'
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.svg'
 
 const Layout = () => {
     const { videos, setVideos } = useContext(Context)
@@ -9,7 +10,9 @@ const Layout = () => {
     return (
         <div>
             <h1 className='p-2 border border-2 text-2xl text-center'>
-                Video App
+             <p className='flex '>
+             <img src={logo} alt="logo" className='w-10' /> VIM
+             </p>
                 <Link to='/AddVideo'>
                     <div className='bg-blue-600 m-1 active:text-red-400 hover:bg-blue-500 text-white font-bold'>Add+ </div>
                 </Link>
